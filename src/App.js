@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import * as React from "react";
+import { ThemeProvider } from "@material-ui/styles";
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import { makeStyles, createTheme } from "@material-ui/core/styles";
+import ElevateAppBar from "./Components/navbar";
+import Content from "./Components/Content";
+import Flowers from "./images/flowers2.jpeg";
 
-function App() {
+const theme = createTheme({
+  components: {},
+  palette: {},
+});
+
+const useStyles = makeStyles((theme) => ({
+  background: {
+    background: `url(${Flowers})`,
+    marginTop: `5px`,
+    height: `100vh`,
+  },
+  container: {
+    background: "#fff",
+    height: `100%`,
+  },
+}));
+
+const App = () => {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <div className={classes.background}>
+          <ElevateAppBar></ElevateAppBar>
+          <Container fixed className={classes.container}>
+            <Content />
+          </Container>
+        </div>
+      </ThemeProvider>
+    </React.Fragment>
   );
-}
+};
 
 export default App;
