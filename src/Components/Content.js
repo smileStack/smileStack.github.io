@@ -134,7 +134,12 @@ const Content = () => {
 
   return (
     <React.Fragment>
-            <Carousel className={classes.mediaImage}>
+            <Carousel className={classes.mediaImage}
+            navButtonsAlwaysVisible={true}
+            autoPlay={false}
+            swipe={true}
+            indicators={true}
+            >
         {items.map((item, i) => (
           <CardMedia
             key={i}
