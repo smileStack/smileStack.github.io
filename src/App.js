@@ -17,12 +17,12 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   background: {
     background: `url(${Flowers})`,
-    marginTop: `5px`,
     height: `100%`,
   },
   container: {
     background: "#fff",
     height: `100%`,
+    paddingTop:`1em`,
   },
 }));
 
@@ -35,9 +35,8 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <div className={classes.background}>
           <ElevateAppBar></ElevateAppBar>
-          <Container fixed className={classes.container}>
+          <Container className={classes.container}>
             <Content />
-            <Youtube />
           </Container>
         </div>
       </ThemeProvider>

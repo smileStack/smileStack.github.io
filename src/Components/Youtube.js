@@ -1,5 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Flowers from "../images/Mom's Funeral Program - Eng.png";
+import FlowersSpanish from "../images/Mom's Funeral Program.png";
 
 const useStyles = makeStyles((theme) => ({
   video: {

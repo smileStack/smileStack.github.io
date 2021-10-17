@@ -6,6 +6,9 @@ import { Paper, Button, Box, Typography, CardMedia } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { autocompleteClasses } from "@mui/material";
 import Flowers from "../images/Mom's Funeral Program - Eng.png";
+import FlowersSpanish from "../images/Mom's Funeral Program.png";
+import Youtube from "./Youtube"
+
 
 const useStyles = makeStyles((theme) => ({
   name: {
@@ -32,6 +35,17 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2em",
     width: "100%",
   },
+  subtitle: {
+    fontFamily: "'Karla', sans-serif",
+    fontSize: "1em",
+    width: "100%",
+  },
+  image: {
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "auto"
+    },
+  },
   button: {
     margin: theme.spacing(2),
     [theme.breakpoints.down("sm")]: {
@@ -57,14 +71,40 @@ const Content = () => {
 
   var items = [
     {
-      name: "Image #1",
-      description: "Happy we were able to...",
-      image: `/images/flowers2.jpeg`,
+      type: "img",
+      src: `/images/mom-and-me-baby.jpeg`,
     },
     {
-      name: "Image #2",
-      description: "The time we...",
-      image: `/images/flowers.jpeg`,
+      type: "img",
+      src: `/images/mom-and-me-disney.jpeg`,
+    },
+    {
+      type: "img",
+      src: `/images/mom-funny.jpeg`,
+    },
+    {
+      type: "img",
+      src: `/images/mom-traditional-dress.jpeg`,
+    },
+    {
+      type: "img",
+      src: `/images/mom-headshot.jpeg`,
+    },
+    {
+      type: "img",
+      src: `/images/mom-shiny-dress.jpeg`,
+    },
+    {
+      type: "img",
+      src: `/images/mom-and-neme.jpeg`,
+    },
+    {
+      type: "img",
+      src: `/images/mom-living-room.jpeg`,
+    },
+    {
+      type: "video",
+      src: `/video/madrid-mom.mov`,
     },
   ];
 
@@ -94,14 +134,15 @@ const Content = () => {
 
   return (
     <React.Fragment>
-      <Carousel className={classes.mediaImage}>
+            <Carousel className={classes.mediaImage}>
         {items.map((item, i) => (
           <CardMedia
             key={i}
             className={classes.mediaImage}
-            image={item.image}
-            title={item.name}
-            component="img"
+            src={item.src}
+            component={item.type}
+            allow="autoplay"
+            autoplay="true"
           ></CardMedia>
         ))}
       </Carousel>
@@ -122,18 +163,26 @@ const Content = () => {
         <Typography align="center" className={classes.name}>
           Said Martinez
         </Typography>
-        <Typography className={classes.text}>{date} @ 2PM</Typography>
+        <Typography className={classes.text}>{date} @ 2:30PM</Typography>
+        <Typography className={classes.subtitle}>To join at distance please join on Zoom below</Typography>
+
         <Button
-          variant="outlined"
+          variant="contained"
           className={classes.button}
-          size="large"
           target="_blank"
           href="https://goo.gl/maps/XbDgZ8cyTD6S2LLj8"
         >
-          Google Maps
+        Location on Google Maps
         </Button>
-        <Button>Program</Button>
-      </TabPanel>
+        <Button           variant="contained"
+ className={classes.button} target="_blank" href="https://us02web.zoom.us/j/87670209935?pwd=anYyaVRVc25NVitpYiszS0R3VXloUT09">
+          Join on Zoom
+        </Button>
+          <Button           variant="contained"
+ href={Flowers} target="_blank">Download Program</Button>
+          <Youtube/>
+          <img  className={classes.image} src={Flowers}/>
+        </TabPanel>
       <TabPanel value={value} index={"spanish"} className={classes.tabContent}>
         <Typography className={classes.text}>
           Celebremos la vida y el amor que compartimos por
@@ -141,21 +190,28 @@ const Content = () => {
         <Typography align="center" className={classes.name}>
           Said Martinez
         </Typography>
-        <Typography className={classes.text}>{date} @ 2PM</Typography>
+        <Typography className={classes.text}>{date} @ 2:30PM</Typography>
+        <Typography className={classes.subtitle}>Para participar a distancia junte por Zoom abajo</Typography>
         <Button
           className={classes.button}
-          variant="outlined"
           target="_blank"
           size="large"
           href="https://goo.gl/maps/XbDgZ8cyTD6S2LLj8"
+          variant="contained"
         >
-          Google Mapas
+          Ubicacion en Google Maps
         </Button>
-        <a href={Flowers} target="_blank" rel="noopener noreferrer" download>
-          <Button className={classes.button} variant="outlined">
-            Program
-          </Button>
-        </a>
+        <Button className={classes.button}           variant="contained"
+
+        target="_blank" href="https://us02web.zoom.us/j/87670209935?pwd=anYyaVRVc25NVitpYiszS0R3VXloUT09">
+          Unase por Zoom
+        </Button>
+          <Button href={FlowersSpanish} target="_blank"           variant="contained"
+
+          >Descarga el Programa</Button>
+          <Youtube/>
+          <img className={classes.image}  src={FlowersSpanish}/>
+
       </TabPanel>
     </React.Fragment>
   );
