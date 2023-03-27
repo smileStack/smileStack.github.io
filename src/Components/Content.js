@@ -35,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "2em",
     width: "100%",
   },
+  bold:{
+    fontFamily: "'Karla', sans-serif",
+    fontSize: "2em",
+    width: "100%",
+    fontWeight:"bold",
+  },
   subtitle: {
     fontFamily: "'Karla', sans-serif",
     fontSize: "1em",
@@ -71,14 +77,14 @@ const Content = () => {
 
   var items = [
     
-    {
-      type: "img",
-      src: `/images/Payment.jpeg`,
-    },
-    {
-      type: "img",
-      src: `/images/mom-and-me-baby.jpeg`,
-    },
+    // {
+    //   type: "img",
+    //   src: `https://ibb.co/9GYVZVv`,
+    // },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-and-me-baby.jpeg`,
+    // },
     // {
     //   type: "img",
     //   src: `/images/mom-and-me-disney.jpeg`,
@@ -139,7 +145,7 @@ const Content = () => {
 
   return (
     <React.Fragment>
-            <Carousel className={classes.mediaImage}
+            {/* <Carousel className={classes.mediaImage}
             navButtonsAlwaysVisible={true}
             autoPlay={false}
             swipe={true}
@@ -155,7 +161,7 @@ const Content = () => {
             autoplay="true"
           ></CardMedia>
         ))}
-      </Carousel>
+      </Carousel> */}
       <Tabs
         value={value}
         onChange={handleChange}
@@ -168,15 +174,17 @@ const Content = () => {
       </Tabs>
       <TabPanel value={value} index={"english"} className={classes.tabContent}>
         <Typography className={classes.text}>
-          Join me in celebrating the life and memory of
+          Thank you for scanning this QR code. See what we are willing to offer for the return of our phones:
         </Typography>
-        <Typography align="center" className={classes.name}>
-          Said Martinez
+        <Typography align="center" className={classes.text}>iPhone 12 Pro</Typography>
+        <Typography align="center" className={classes.text}>
+          IMEI: 35 378118 287532 6
         </Typography>
-        <Typography className={classes.text}>{date} @ 2:30PM</Typography>
-        <Typography className={classes.subtitle}>To join at distance please join on Zoom below</Typography>
-
-        <Button
+        <Typography align="center" className={classes.text}>
+          Description: Space Grey. Phone with colorful skin that has quote that reads: "Live, Laugh, Love, Daily"
+        </Typography>
+        <Typography align="center" className={classes.bold}>$1,000</Typography>
+        {/* <Button
           variant="contained"
           className={classes.button}
           target="_blank"
@@ -190,11 +198,22 @@ const Content = () => {
         </Button>
           <Button           variant="contained"
  href={Flowers} target="_blank">Download Program</Button>
-          <Youtube/>
-          <img  className={classes.image} src={Flowers}/>
+          <Youtube/> */}
+          {/* <img  className={classes.image} src={Flowers}/> */}
         </TabPanel>
       <TabPanel value={value} index={"spanish"} className={classes.tabContent}>
         <Typography className={classes.text}>
+          Mira lo que ofrecemos por nuestros celulares:
+        </Typography>
+        <Typography align="center" className={classes.text}>iPhone 12 Pro</Typography>
+        <Typography align="center" className={classes.text}>
+          IMEI: 35 378118 287532 6
+        </Typography>
+        <Typography align="center" className={classes.text}>
+          Descripcion: Space Grey. Cita que lee: "Live, Laugh, Love, Daily", piel con muchos colores.
+        </Typography>
+        <Typography align="center" className={classes.bold}>$1,000</Typography>
+        {/* <Typography className={classes.text}>
           Celebremos la vida y el amor que compartimos por
         </Typography>
         <Typography align="center" className={classes.name}>
@@ -220,7 +239,7 @@ const Content = () => {
 
           >Descarga el Programa</Button>
           <Youtube/>
-          <img className={classes.image}  src={FlowersSpanish}/>
+          <img className={classes.image}  src={FlowersSpanish}/> */}
 
       </TabPanel>
     </React.Fragment>

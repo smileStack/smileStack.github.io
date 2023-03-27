@@ -44,8 +44,7 @@ const ElevateAppBar = (props) => {
         <AppBar>
           <Toolbar className={classes.appBar}>
             <Typography variant="h6" component="div">
-              <span className={classes.name}>Said Martinez:</span> Celebra la
-              Vida
+              <span className={classes.name}>We just want our phones back:</span> Please share this link to anyone in the cell phone repair industry. 
             </Typography>
           </Toolbar>
         </AppBar>
