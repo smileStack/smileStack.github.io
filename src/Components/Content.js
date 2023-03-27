@@ -70,42 +70,47 @@ const Content = () => {
   };
 
   var items = [
+    
+    {
+      type: "img",
+      src: `/images/Payment.jpeg`,
+    },
     {
       type: "img",
       src: `/images/mom-and-me-baby.jpeg`,
     },
-    {
-      type: "img",
-      src: `/images/mom-and-me-disney.jpeg`,
-    },
-    {
-      type: "img",
-      src: `/images/mom-funny.jpeg`,
-    },
-    {
-      type: "img",
-      src: `/images/mom-traditional-dress.jpeg`,
-    },
-    {
-      type: "img",
-      src: `/images/mom-headshot.jpeg`,
-    },
-    {
-      type: "img",
-      src: `/images/mom-shiny-dress.jpeg`,
-    },
-    {
-      type: "img",
-      src: `/images/mom-and-neme.jpeg`,
-    },
-    {
-      type: "img",
-      src: `/images/mom-living-room.jpeg`,
-    },
-    {
-      type: "video",
-      src: `/video/madrid-mom.mov`,
-    },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-and-me-disney.jpeg`,
+    // },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-funny.jpeg`,
+    // },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-traditional-dress.jpeg`,
+    // },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-headshot.jpeg`,
+    // },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-shiny-dress.jpeg`,
+    // },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-and-neme.jpeg`,
+    // },
+    // {
+    //   type: "img",
+    //   src: `/images/mom-living-room.jpeg`,
+    // },
+    // {
+    //   type: "video",
+    //   src: `/video/madrid-mom.mov`,
+    // },
   ];
 
   const TabPanel = (props) => {
